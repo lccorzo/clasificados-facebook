@@ -15,6 +15,7 @@
     <?php endforeach; ?>
     </ul>
  
- <?php if($clasificados->prev) echo link_to(array("clasificados/index/$clasificados->prev/", '<< Anterior |')); ?>
-<?php if($clasificados->next) echo link_to(array("menus/index/$clasificados->next/", 'Próximo >>')); ?>
+ <?php if($clasificados->prev) echo link_to(array("clasificado/index/$clasificados->prev/", '<< Anterior |')); ?>
+<?php if($clasificados->next) echo link_to(array("clasificado/index/$clasificados->next/", 'Próximo >>')); ?>
+
 </div>
