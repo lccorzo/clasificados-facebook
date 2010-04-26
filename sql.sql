@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-04-2010 a las 09:56:55
+-- Tiempo de generación: 26-04-2010 a las 15:39:19
 -- Versión del servidor: 5.1.30
 -- Versión de PHP: 5.2.4
 
@@ -26,19 +26,14 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 
 CREATE TABLE IF NOT EXISTS `clasificado` (
-  `id` bigint(20) NOT NULL DEFAULT '0',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `contenido` text COLLATE utf8_unicode_ci,
   `subcategoria` int(11) DEFAULT NULL,
   `usuario` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_clasificado_usuario` (`usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcar la base de datos para la tabla `clasificado`
---
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -53,11 +48,6 @@ CREATE TABLE IF NOT EXISTS `imagen` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `clasificado` (`clasificado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcar la base de datos para la tabla `imagen`
---
-
 
 -- --------------------------------------------------------
 
@@ -75,11 +65,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `password` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcar la base de datos para la tabla `usuario`
---
-
 
 --
 -- Filtros para las tablas descargadas (dump)

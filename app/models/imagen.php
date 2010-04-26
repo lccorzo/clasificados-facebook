@@ -1,0 +1,7 @@
+<?
+class Imagen extends ActiveRecord
+{
+      
+}
+
+?>
