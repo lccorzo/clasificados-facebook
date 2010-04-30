@@ -1,0 +1,56 @@
+    <div class="categorias">
+        <ul>
+        <?php foreach ($categorias as $itemc): ?>
+            <li><?php echo link_to(array('clasificado/categoria/'.$itemc->id,$itemc->nombre));?></li>
+        <? endforeach;?>
+        </ul>
+    </div>
+    <div class="listado">
+        <ul >
+            <?php foreach ($clasificados->items as $item) : ?>
+            <li>
+                
+               <b><?php echo link_to(array('clasificado/detalles/'.$item->id,$item->titulo));?></b>
+                <div>
+                <?
+                $img=$item->getImagen();
+
+                if(count($img)>0){
+                ?>
+                    <?php echo link_to(array('clasificado/detalles/'.$item->id,'<img src="http://buyigo.com/clasifcados_buyigo/app/public/img/clasificados/sl'.$img[0]->nombre.'"/>'));?>
+                <?
+                   
+                }else{ ?>
+                    <?php echo link_to(array('clasificado/detalles/'.$item->id,'<img src="http://buyigo.com/clasifcados_buyigo/app/public/img/NoImage.png"/>'));?>                    
+                <? }?>
+                </div>
+                <b>Valor:</b> $ <? echo $item->precio;?>
+                 <br />
+                 <b>estado:</b>  <? echo ($item->estado=='U'?'Usado':'Nuevo');?><br /><br />
+                 <fb:share-button class="meta">
+                 <meta name="medium" content="mult"/>
+<meta name="title" content="Buyigo Clasificado"/>
+<meta name="description" content="<? echo $item->titulo;?> - Buyigo Clasificados"/>
+        <? if(count($img)>0){ ?>
+                    <link rel="image_src" href="http://buyigo.com/clasifcados_buyigo/app/public/img/clasificados/bl<? echo $img[0]->nombre; ?>" />
+                 
+                <?  }else{ ?>
+                    <link rel="image_src" href="http://buyigo.com/clasifcados_buyigo/app/public/img/NoImage.png" />
+                <? } ?>
+<link rel="target_url" href="http://apps.facebook.com/clasifcados_buyigo/clasificado/detalles/<? echo $item->id;?>"/>                   
+                   </fb:share-button>
+                 
+                  
+                 
+            <?php  endforeach; ?>   
+        </ul>
+        <br />     
+    </div>
+    <div>
+        <p class="paginacion" align="right">
+            <?php if($clasificados->prev) echo link_to(array("clasificado/index/$clasificados->prev/", '<< Anterior | ')); ?>
+            <?php if($clasificados->next) echo link_to(array("clasificado/index/$clasificados->next/", ' Pr&oacute;ximo >>')); ?>
+        </p>
+   </div>
+
+

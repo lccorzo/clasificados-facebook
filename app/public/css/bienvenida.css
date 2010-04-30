@@ -155,3 +155,35 @@ body{
 .clear {
     clear: both;
 }
+.listado{
+    height: 580px;
+}
+.listado li{
+	display:inline;
+	float:left;
+	width:148px;
+    height: 190px;
+    background-image: url(http://buyigo.com/clasificadosFB/app/public/img/fondoItem.gif);
+	padding:1px;
+	margin:1px;
+	text-align: center;
+	border-right: #a5a7aa solid 1px;
+	border-bottom: #a5a7aa solid 1px;
+}
+.paginacion{
+    text-align: right;
+}
+.categorias{
+    width: 200px;
+    float:left;
+    height: 580px;
+    background: #b8cbf0;
+}
+.categorias ul{
+    list-style: none;
+    margin:0px;
+    padding:8px;
+}
+.categorias li{
+    
+}

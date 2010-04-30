@@ -1,7 +1,7 @@
 <?
 class Imagen extends ActiveRecord
 {
-      public function initialize() {
+    public function initialize() {
 		$this->belongs_to('clasificado');
 	}
 

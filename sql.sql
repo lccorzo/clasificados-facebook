@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-04-2010 a las 16:49:31
+-- Tiempo de generación: 26-04-2010 a las 17:58:37
 -- Versión del servidor: 5.1.30
 -- Versión de PHP: 5.2.4
 
@@ -550,9 +550,9 @@ INSERT INTO `clasificado` (`id`, `titulo`, `contenido`, `subcategoria`, `usuario
 CREATE TABLE IF NOT EXISTS `imagen` (
   `id` bigint(20) NOT NULL,
   `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `clasificado` bigint(20) NOT NULL,
+  `clasificado_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `clasificado` (`clasificado`)
+  UNIQUE KEY `clasificado` (`clasificado_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
