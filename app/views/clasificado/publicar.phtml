@@ -1,0 +1,62 @@
+<fb:editor action="http://apps.facebook.com/holamundocarito/imprimir.php">
+    <fb:editor-custom>
+        <input type="hidden" name="action" value="editor" />
+        <input type="hidden" name="submit" value="true" />
+    </fb:editor-custom>
+    <fb:editor-text  label="E mail" name="mail" value=""  />
+    <fb:editor-text  label="Ciudad" name="ciudad" value="" />
+    
+        
+    <tr>
+    
+    
+        <th><label>Categoria </label></th>
+        <td class="editorkit_row">
+            <select name="categoria" id="categoria">
+                <option value="-1">Categoria</option>
+                <option value="1">Articulos Para La Venta</option>
+                <option value="2">Vehiculos</option>
+                
+            </select>
+        </td>
+    </tr>
+    
+     <tr>
+     
+        <th><label>Subcategoria </label></th>
+        
+        <td class="editorkit_row">
+            <select name="subcategoria" id="subcategoria">
+                <option value="-1">SubCategoria</option>
+                <option value="1">Electronicos</option>
+                <option value="2">Bienes Raices</option>
+                <option value="3">Musica</option>
+                <option value="4">Ropa y Accesorios</option>
+                <option value="5">Libros</option>
+                <option value="6">Productos Digitales</option>
+                
+            </select>
+        </td>
+         <td>    
+            Select image: <input name="userfile" type="file"/>
+         </td> 
+    </tr>
+    <fb:editor-text  label="Titulo" name="titulo" value="" />
+    <fb:editor-text  label="Precio" name="precio" value="" />
+    <fb:editor-textarea label="Descripcion:" name="descripcion" value="" />
+  
+ 
+
+    
+    <fb:editor-divider/>
+    
+    <fb:editor-buttonset>
+        <fb:editor-button name="submit" value="Submit Name"/>
+        <fb:editor-cancel name="cancel" value="cancel"/>
+    </fb:editor-buttonset>
+
+        <fb:editor-divider/>
+        
+ 
+ 
+</fb:editor >

@@ -1,0 +1,41 @@
+    <div class="categorias">
+        <ul>
+        <?php foreach ($subcategorias as $itemc): ?>
+            <li><?php echo link_to(array('clasificado/subcategoria/'.$itemc->id,$itemc->nombre));?></li>
+        <? endforeach;?>
+        </ul>
+    </div>
+    <div class="listado">
+        <ul >
+            <?php foreach ($clasificados->items as $item) : ?>
+            <li>
+                
+               <b><?php echo $item->titulo; ?></b>
+                <div>
+                <?
+                $img=$item->getImagen();
+
+                if(count($img)>0){
+                ?>
+                    <img src="http://buyigo.com/clasifcados_buyigo/app/public/img/clasificados/sl<? echo $img[0]->nombre; ?>"/>
+                <?
+                   
+                }else{ ?>
+                    <img src="http://buyigo.com/clasifcados_buyigo/app/public/img/NoImage.png"/>
+                <? }?>
+                </div>
+                <b>Valor:</b> $ <? echo $item->precio;?>
+                 <br /><br />
+                 <b>estado:</b>  <? echo ($item->estado=='U'?'Usado':'Nuevo');?>
+            <?php  endforeach; ?>   
+        </ul>
+        <br />     
+    </div>
+    <div>
+        <p class="paginacion" align="right">
+            <?php if($clasificados->prev) echo link_to(array("clasificado/categoria/$clasificados->prev/", '<< Anterior | ')); ?>
+            <?php if($clasificados->next) echo link_to(array("clasificado/categoria/$clasificados->next/", ' Pr&oacute;ximo >>')); ?>
+        </p>
+   </div>
+
+
